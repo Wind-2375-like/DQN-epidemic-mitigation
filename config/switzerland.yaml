@@ -1,0 +1,94 @@
+# model parameters
+alpha: 0.05
+var_alpha: 0.005
+eta: 0.001
+var_eta: 0.0001
+beta: 0.01
+var_beta: 0.01
+gamma: 0.000005
+var_gamma: 0.0000005
+zeta: 0.01
+var_zeta: 0.0002
+tau_0: 0.01
+var_tau_0: 0.0001
+dt: 40
+# action parameters
+confinement_effectiveness: 0.05
+isolation_effectiveness: 0.001
+extra_hospital_effectiveness: 0.5
+env_step_lenght: 7
+srate: 3
+vaccination_effectiveness: 20
+# graph description
+cities:
+  Lausanne:
+    pop: 295000
+    lat: 6.626393296716787
+    lon: 46.518765787059046
+  Geneva:
+    pop: 900000
+    lat: 6.14185680296182
+    lon: 46.20467073463686
+  Sion:
+    pop: 34978
+    lat: 7.3587443397914445
+    lon: 46.221903594420475
+  Neuchâtel:
+    pop: 44531
+    lat: 6.933318411985289
+    lon: 46.99367088694453
+  Basel:
+    pop: 830000
+    lat: 7.60098486359839
+    lon: 47.55666918341509
+  Bern:
+    pop: 133115
+    lat: 7.444922268565087
+    lon: 46.95192252065917
+  Lücern:
+    pop: 82000
+    lat: 8.271663727816637
+    lon: 47.05907429589356
+  St-Gallen:
+    pop: 76213
+    lat: 9.373844556707795
+    lon: 47.425290724323155
+  Zürich:
+    pop: 1354000
+    lat: 8.53773996932072
+    lon: 47.37392435028808
+roads:
+  - - Lausanne
+    - Geneva
+  - - Lausanne
+    - Sion
+  - - Lausanne
+    - Neuchâtel
+  - - Neuchâtel
+    - Bern
+  - - Lausanne
+    - Bern
+  - - Bern
+    - Zürich
+  - - Bern
+    - Lücern
+  - - Neuchâtel
+    - Geneva
+  - - Lücern
+    - Zürich
+  - - Basel
+    - Zürich
+  - - Lücern
+    - Basel
+  - - Neuchâtel
+    - Basel
+  - - Lücern
+    - Basel
+  - - Lücern
+    - St-Gallen
+  - - St-Gallen
+    - Basel
+  - - St-Gallen
+    - Zürich
+  - - Zürich
+    - Lücern

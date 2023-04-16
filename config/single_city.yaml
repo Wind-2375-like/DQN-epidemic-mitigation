@@ -1,0 +1,29 @@
+# model parameters
+alpha: 1
+var_alpha: 0.1
+eta: 0.1
+var_eta: 0.01
+beta: 0.1
+var_beta: 0.01
+gamma: 0.01
+var_gamma: 0.01
+zeta: 0.1
+var_zeta: 0.01
+tau_0: 100
+var_tau_0: 0
+dt: 0.2
+# action parameters
+confinement_effectiveness: 0.05
+isolation_effectiveness: 0.05
+extra_hospital_effectiveness: 0.5
+vaccination_effectiveness: 5000
+env_step_lenght: 7
+srate: 3
+# map
+cities:
+  Lausanne: 
+    pop : 295000
+    lat : 6.626393296716787
+    lon : 46.518765787059046
+roads:
+  null
