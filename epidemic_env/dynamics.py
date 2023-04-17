@@ -54,8 +54,8 @@ class ModelDynamics():
             source_file (str): path to yaml initialization file
         """
         # loading the parameters from the yaml file
-        doc = open(source_file, 'r')
-        _params = yaml.safe_load(doc)
+        with open(source_file, 'r', encoding='utf-8') as doc:
+            _params = yaml.safe_load(doc)
         try:
             # simulation parameters
             self.alpha = _params['alpha']
