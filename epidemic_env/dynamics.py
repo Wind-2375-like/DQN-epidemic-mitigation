@@ -15,7 +15,7 @@ class Parameters():
     """Contains simulation parameters for either a city or the country on a given day
     """
     day: int
-    suceptible: int
+    susceptible: int
     exposed: int
     infected: int
     recovered: int
@@ -42,7 +42,7 @@ class ModelDynamics():
     
     parameters = [  'infected',
                     'dead',
-                    'suceptible',
+                    'susceptible',
                     'exposed',
                     'recovered',
                     'initial_population']
@@ -156,12 +156,12 @@ class ModelDynamics():
         Returns:
             Tuple[Dict[str,float],Dict[str,Dict[str,float]]]: a tuple containing
             
-                in element 0: a dict containing the total suceptible, infected, recovered and dead population
+                in element 0: a dict containing the total susceptible, infected, recovered and dead population
                 
-                in element 1: a dict containing the suceptible, infected, recovered and dead population per city
+                in element 1: a dict containing the susceptible, infected, recovered and dead population per city
         """
         cities = {}
-        suceptible_total = 0
+        susceptible_total = 0
         exposed_total = 0
         infected_total = 0
         recovered_total = 0
@@ -169,9 +169,9 @@ class ModelDynamics():
         total = 0
 
         for c in self.cities:
-            suceptible = np.max(int(
+            susceptible = np.max(int(
                 np.floor(self.map.nodes[c]['s'] * self.map.nodes[c]['pop'])),0)
-            suceptible_total += suceptible
+            susceptible_total += susceptible
             exposed = np.max(int(
                 np.floor(self.map.nodes[c]['e'] * self.map.nodes[c]['pop'])),0)
             exposed_total += exposed
@@ -188,7 +188,7 @@ class ModelDynamics():
 
             cities[c] = Parameters(
                 day=day,
-                suceptible=suceptible,
+                susceptible=susceptible,
                 exposed=exposed,
                 infected=infected,
                 recovered=recovered,
@@ -198,7 +198,7 @@ class ModelDynamics():
 
         total = Parameters(
             day=day,
-            suceptible=suceptible_total,
+            susceptible=susceptible_total,
             exposed=exposed_total,
             infected=infected_total,
             recovered=recovered_total,
@@ -361,13 +361,13 @@ class ModelDynamics():
             # loss of immunity rate
             stoch_gamma = np.max(
                 [np.random.normal(self.gamma, self.var_gamma), 0])
-            new_suceptible = stoch_gamma * r
+            new_susceptible = stoch_gamma * r
 
             # compute the derivatives
-            ds[c] = new_suceptible - new_exposed - new_vaccinated
+            ds[c] = new_susceptible - new_exposed - new_vaccinated
             de[c] = new_exposed - new_infected
             di[c] = new_infected - new_recovered - new_deaths
-            dr[c] = new_recovered - new_suceptible + new_vaccinated
+            dr[c] = new_recovered - new_susceptible + new_vaccinated
             dd[c] = new_deaths
 
         for c in self.cities:

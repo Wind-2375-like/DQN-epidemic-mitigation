@@ -92,7 +92,7 @@ class Visualize():
         infection_hist.plot(y='infected', use_index=True, ax=ax[0, 1])
         infection_hist.plot(y='dead', x='day', ax=ax[0, 1])
         infection_hist.plot(y='exposed', x='day', ax=ax[0, 1])
-        infection_hist.plot(y='suceptible', x='day', ax=ax[0, 1])
+        infection_hist.plot(y='susceptible', x='day', ax=ax[0, 1])
         infection_hist.plot(y='recovered', x='day', ax=ax[0, 1])
 
         # The next plots show the actions
