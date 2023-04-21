@@ -1,3 +1,6 @@
+# Do not commit the modified tutorial~
+tutorial.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
